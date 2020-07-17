@@ -1,0 +1,91 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "subscriptd": {
+      "type": "string",
+      "metadata": {
+        "description": "subscriptd"
+      }
+    },
+    "resourceGrp": {
+      "type": "string",
+      "minLength": 3,
+      "metadata": {
+        "description": "resourceGrp"
+      }
+    },
+    "iotHubName": {
+      "type": "string",
+      "metadata": {
+        "description": "iotHubName"
+      }
+    },
+    "eventHubNameSpace": {
+      "type": "string",
+      "minLength": 3,
+      "metadata": {
+        "description": "eventHubNameSpace"
+      }
+    },
+    "eventHubName": {
+      "type": "string",
+      "minLength": 3,
+      "metadata": {
+        "description": "eventHubName"
+      }
+    },
+    "eventSubscriptionName": {
+      "type": "string",
+      "minLength": 3,
+      "metadata": {
+        "description": "eventSubscriptionName"
+      }
+    },
+    "filterMessageType": {
+      "type": "string",
+      "minLength": 3,
+      "metadata": {
+        "description": "filterMessageType"
+      }
+    }
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Devices/IotHubs/providers/eventSubscriptions",
+      "name": "[concat(parameters('iotHubName'),'/Microsoft.EventGrid/',parameters('eventSubscriptionName'))]",
+      "apiVersion": "2018-01-01",
+      "properties": {
+        "topic": "[concat('/subscriptions/',parameters('subscriptd'),'/resourcegroups/',parameters('resourceGrp'),'/providers/Microsoft.Devices/IotHubs/',parameters('iotHubName'))]",
+        "destination": {
+          "endpointType": "EventHub",
+          "properties": {
+            "resourceId": "[concat('/subscriptions/',parameters('subscriptd'),'/resourcegroups/',parameters('resourceGrp'),'/providers/Microsoft.EventHub/namespaces/',parameters('eventHubNameSpace'),'/eventhubs/',parameters('eventHubName'))]"
+          }
+        },
+        "filter": {
+          "subjectBeginsWith": "",
+          "subjectEndsWith": "",
+          "isSubjectCaseSensitive": false,
+          "includedEventTypes": [
+            "Microsoft.Devices.DeviceTelemetry"
+          ],
+          "advancedFilters": [
+            {
+              "operatorType": "StringIn",
+              "key": "data.properties.message-type",
+              "values": [
+                "[parameters('filterMessageType')]"
+              ]
+            }
+          ]
+        },
+        "labels": [],
+        "eventDeliverySchema": "EventGridSchema",
+        "dependsOn": [
+          "[resourceId('Microsoft.Devices/IotHubs', parameters('iotHubName'))]"
+        ]
+      }
+    }
+  ]
+}

@@ -26,6 +26,13 @@ module "storage" {
   storagetables			   = var.storagetables
 }
 
+module "storage-dataLake" {
+   source                          ="./modules/storage-dataLake"
+   resource_group_name             = azurerm_resource_group.main.name
+   location                        = azurerm_resource_group.main.location
+   azenv                           = var.azenv
+}
+
 
 module "eventhub" {
    source                          = "./modules/eventhub"
@@ -67,5 +74,26 @@ module "iothub" {
    resource_group_name             = azurerm_resource_group.main.name
    location                        = azurerm_resource_group.main.location
    azenv                           = var.azenv
+   azure_subscription_id           = var.azure_subscription_id
+   azure_client_id                 = var.azure_client_id
+   azure_tenant_id                 = var.azure_tenant_id
+   azure_client_secret             = var.azure_client_secret
+   evth1ns			   = module.eventhub.evth1ns
 }
+
+module "rediscache" {
+   source                          ="./modules/rediscache"
+   resource_group_name             = azurerm_resource_group.main.name
+   location                        = azurerm_resource_group.main.location
+   azenv                           = var.azenv
+   redisacc			   = var.redisacc
+}
+
+module "appinsights" {
+   source                          ="./modules/appinsights"
+   resource_group_name             = azurerm_resource_group.main.name
+   location                        = azurerm_resource_group.main.location
+   azenv                           = var.azenv
+}
+
 

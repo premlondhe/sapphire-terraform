@@ -70,4 +70,7 @@ variable "eventhubs2" {
   type = list(string)
 }
 
+variable "redisacc" {
+   description = "Redis Cache Account Names"
+}
 

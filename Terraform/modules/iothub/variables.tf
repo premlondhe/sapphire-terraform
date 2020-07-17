@@ -9,3 +9,13 @@ variable "location" {
 variable "azenv" {
     type=string
 }
+
+variable "azure_client_id" {}
+
+variable "azure_client_secret" {}
+
+variable "azure_subscription_id" {}
+
+variable "azure_tenant_id" {}
+
+variable "evth1ns" {}

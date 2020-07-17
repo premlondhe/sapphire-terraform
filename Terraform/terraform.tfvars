@@ -21,4 +21,5 @@ sbtopictankinventoriessubscription=["smartalerts", "smartwater"]
 eventhubs=["atgconfigs", "detecteddeliveries", "nozzleconfigs", "reconciliations", "rollupevents", "latedata", "salestransactions", "tankinventories"]
 eventhubs2=["real-time-rec-req", "buffered-real-time-rec-req", "realtime-stock-rec-snapshots", "interval-snapshots", "alerts", "notifications"]
 
+redisacc=["sap-redis"]
 
