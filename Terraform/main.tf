@@ -96,4 +96,10 @@ module "appinsights" {
    azenv                           = var.azenv
 }
 
+module "appconfig" {
+   source                          ="./modules/appconfig"
+   resource_group_name             = azurerm_resource_group.main.name
+   location                        = azurerm_resource_group.main.location
+   azenv                           = var.azenv
+}
 
