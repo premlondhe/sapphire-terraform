@@ -103,3 +103,11 @@ module "appconfig" {
    azenv                           = var.azenv
 }
 
+module "keyvault" {
+    source                          = "./modules/keyvault"
+    azenv                           = var.azenv
+    resource_group_name             = azurerm_resource_group.main.name
+    location                        = azurerm_resource_group.main.location
+    azure_tenant_id                 = var.azure_tenant_id
+}
+
