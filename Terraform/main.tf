@@ -126,3 +126,17 @@ module "databricks" {
    workspacename		   = var.workspacename
 }
 
+module "datawarehouse" {
+   source                          ="./modules/datawarehouse"
+   resource_group_name             = azurerm_resource_group.main.name
+   location                        = azurerm_resource_group.main.location
+   azenv                           = var.azenv
+   start_ipadd_list	 	   = var.start_ipadd_list
+   end_ipaddr_list		   = var.end_ipaddr_list
+   firewall_rule_name		   = var.firewall_rule_name
+   azure_subscription_id           = var.azure_subscription_id
+   azure_client_id                 = var.azure_client_id
+   azure_tenant_id                 = var.azure_tenant_id
+   azure_client_secret             = var.azure_client_secret
+}
+

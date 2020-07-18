@@ -78,3 +78,12 @@ variable "workspacename" {
       description = "Databricks Workspace Name"
 }
 
+variable "start_ipadd_list" {
+}				  
+
+variable "end_ipaddr_list" {
+}				  
+
+variable "firewall_rule_name" {
+}
+
