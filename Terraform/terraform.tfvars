@@ -22,4 +22,4 @@ eventhubs=["atgconfigs", "detecteddeliveries", "nozzleconfigs", "reconciliations
 eventhubs2=["real-time-rec-req", "buffered-real-time-rec-req", "realtime-stock-rec-snapshots", "interval-snapshots", "alerts", "notifications"]
 
 redisacc=["sap-redis"]
-
+workspacename="sap-databricks"

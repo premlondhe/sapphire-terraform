@@ -74,3 +74,7 @@ variable "redisacc" {
    description = "Redis Cache Account Names"
 }
 
+variable "workspacename" {
+      description = "Databricks Workspace Name"
+}
+

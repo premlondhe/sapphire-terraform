@@ -111,3 +111,18 @@ module "keyvault" {
     azure_tenant_id                 = var.azure_tenant_id
 }
 
+module "signalr" {
+   source                          ="./modules/signalr"
+   resource_group_name             = azurerm_resource_group.main.name
+   location                        = azurerm_resource_group.main.location
+   azenv                           = var.azenv
+}
+
+module "databricks" {
+   source                          ="./modules/databricks"
+   resource_group_name             = azurerm_resource_group.main.name
+   location                        = azurerm_resource_group.main.location
+   azenv                           = var.azenv
+   workspacename		   = var.workspacename
+}
+
