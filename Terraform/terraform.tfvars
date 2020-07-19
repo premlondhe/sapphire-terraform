@@ -22,10 +22,18 @@ eventhubs=["atgconfigs", "detecteddeliveries", "nozzleconfigs", "reconciliations
 eventhubs2=["real-time-rec-req", "buffered-real-time-rec-req", "realtime-stock-rec-snapshots", "interval-snapshots", "alerts", "notifications"]
 
 redisacc=["sap-redis"]
+
 workspacename="sap-databricks"
 
+#Azure DataWarehouse Firewall Rules
 start_ipadd_list=["0.0.0.0","85.115.52.0","217.37.201.145","81.137.30.129","81.150.209.81","81.150.205.97","81.128.183.164","213.120.94.100"]
 end_ipaddr_list=["0.0.0.0","85.115.52.255","217.37.201.145","81.137.30.129","81.150.209.81","81.150.205.97","81.128.183.164","213.120.94.100"]
 firewall_rule_name=["AllowAllWindowsAzureIps","Fairbanks Analysts","FB ADSL 1","FB ADSL 2","FB ADSL 3","FB ADSL 4","FB LPool BT NET","FB SKem BT NET"]
 
+#Azure Datafactory VSTS Configuration 
+account_name="TestAccount"		
+branch_name="master"		
+project_name="Sapphire"		
+repository_name="DataWarehouse"	
+root_folder="DataFactory"		
 

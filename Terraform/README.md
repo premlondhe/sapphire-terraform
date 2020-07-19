@@ -2,9 +2,11 @@ Check all the eventhub/servicebus for topics/queues/subscripts in sapphire stg, 
 =======
 Pending bash scirpt without local az credentials
 Pending dependes_on implementation.
-Pending AKS/ACI, WebApp, StreamAnalytics, signalr, sirmlserver,  through terraform.
-Pending Outputs, getsecretss
+Pending AKS/ACI, WebApp, StreamAnalytics, sirmlserver,  through terraform.
+Pending Output & get secrets
 Pending AddKeyVaultsecret script
+
+
 
 PREREQUISITE:
 az command must be installed on machine.

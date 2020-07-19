@@ -87,3 +87,29 @@ variable "end_ipaddr_list" {
 variable "firewall_rule_name" {
 }
 
+variable "account_name" {
+    type=string
+    description = "Azure DevOps Account Name"
+
+}
+
+variable "branch_name" {
+    type=string
+    description = "Azure DevOps Git Branch Name"
+}
+
+variable "root_folder" {
+    type=string
+    description = "Folder in Azure DevOps Git Branch"
+}
+
+variable "project_name" {
+    type=string
+    description = "Azure DevOps Proejct Name in Azure DevOps Account"
+}
+
+variable "repository_name" {
+    type=string
+    description = "Git Repository Name in Azure DevOps"
+}
+

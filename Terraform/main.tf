@@ -140,3 +140,17 @@ module "datawarehouse" {
    azure_client_secret             = var.azure_client_secret
 }
 
+module "datafactory" {
+   source                          ="./modules/datafactory"
+   resource_group_name             = azurerm_resource_group.main.name
+   location                        = azurerm_resource_group.main.location
+   azenv                           = var.azenv
+   account_name			   = var.account_name
+   branch_name			   = var.branch_name
+   project_name			   = var.project_name
+   repository_name		   = var.repository_name
+   root_folder			   = var.root_folder
+   azure_tenant_id		   = var.azure_tenant_id
+
+}
+
