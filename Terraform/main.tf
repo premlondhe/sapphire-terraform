@@ -154,3 +154,16 @@ module "datafactory" {
 
 }
 
+/*
+module "vm-sirml" {
+   source                          ="./modules/vm-sirml"
+   resource_group_name             = azurerm_resource_group.main.name
+   location                        = azurerm_resource_group.main.location
+   azenv                           = var.azenv
+   nsg-port-list		   = var.nsg-port-list
+   nsg-priority-list		   = var.nsg-priority-list
+   nsg-description-list	 	   = var.nsg-description-list
+   nsg-destination-port-range-list = var.nsg-destination-port-range-list
+   admin_username		   = var.admin_username
+}
+*/

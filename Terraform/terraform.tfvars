@@ -37,3 +37,9 @@ project_name="Sapphire"
 repository_name="DataWarehouse"	
 root_folder="DataFactory"		
 
+#Sir ML Server
+nsg-port-list=["ssh","http","https","ml_server_port"]
+nsg-priority-list=["1010","1020","1030","1040"]
+nsg-description-list=["Allow SSH connection","Allow Http connection","Allow https connection","Allow ml server port"]
+nsg-destination-port-range-list=["22","80","443","12800"]
+admin_username="wyane"

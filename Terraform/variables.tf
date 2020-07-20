@@ -113,3 +113,14 @@ variable "repository_name" {
     description = "Git Repository Name in Azure DevOps"
 }
 
+variable "admin_username" {
+   description = "Sirml vm admin username"
+}
+
+variable "nsg-port-list" {}
+
+variable "nsg-priority-list" {}
+
+variable "nsg-description-list" {}
+
+variable "nsg-destination-port-range-list" {}
