@@ -154,7 +154,6 @@ module "datafactory" {
 
 }
 
-/*
 module "vm-sirml" {
    source                          ="./modules/vm-sirml"
    resource_group_name             = azurerm_resource_group.main.name
@@ -166,4 +165,3 @@ module "vm-sirml" {
    nsg-destination-port-range-list = var.nsg-destination-port-range-list
    admin_username		   = var.admin_username
 }
-*/

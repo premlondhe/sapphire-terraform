@@ -12,7 +12,6 @@ locals {
 	nsg-destination-port-range-list=var.nsg-destination-port-range-list
 }
 
-/*
 resource "azurerm_network_security_rule" "main" {
   count 			= length(local.nsg-priority-list)
   name                		= element(local.nsg-port-list, count.index)
@@ -25,10 +24,13 @@ resource "azurerm_network_security_rule" "main" {
   access                      	= "Allow"
   priority                    	= element(local.nsg-priority-list, count.index)
   direction                   	= "Inbound"
+  source_address_prefix         = "*"
+  destination_address_prefix    = "*"
+
 
   depends_on=[azurerm_network_security_group.main]
 }
-*/
+
 resource "azurerm_virtual_network" "main" {
   name                = "${var.azenv}-sirmlmodel-server-vnet"
   address_space       = ["10.0.0.0/16"]
@@ -49,8 +51,8 @@ resource "azurerm_network_interface" "main" {
   name                		= "${var.azenv}-sirmlmodel-server-subnet-nic"
   location            		= var.location 
   resource_group_name 		= var.resource_group_name
-  enable_accelerated_networking = "true"
-  
+  enable_accelerated_networking = "false"
+#  enable_accelerated_networking = "true" 
   ip_configuration {
     name                          = "SirML-IP-Configuration"
     subnet_id                     = azurerm_subnet.main.id
@@ -88,8 +90,8 @@ resource "azurerm_virtual_machine" "main" {
   resource_group_name   		= var.resource_group_name
   network_interface_ids			= [azurerm_network_interface.main.id]
   primary_network_interface_id 		= azurerm_network_interface.main.id
-  vm_size               		= "Standard_DS4_v2"
-# vm_size				= "Standard_DS1_v2"
+#  vm_size               		= "Standard_DS4_v2"
+  vm_size				= "Standard_DS1_v2"
 
 # Uncomment this line to delete the OS disk automatically when deleting the VM
   # delete_os_disk_on_termination = true
@@ -108,6 +110,7 @@ resource "azurerm_virtual_machine" "main" {
     name  	      = "${var.azenv}-sirmlmodel-server-disk"
     caching           = "ReadWrite"
     create_option     = "FromImage"
+#    create_option     = "Attach"
     managed_disk_type = "Premium_LRS"
     disk_size_gb      = "30"
     os_type	      = "Linux"
