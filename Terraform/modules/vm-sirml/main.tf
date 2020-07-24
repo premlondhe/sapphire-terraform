@@ -132,4 +132,32 @@ resource "azurerm_virtual_machine" "main" {
   depends_on=[azurerm_subnet_network_security_group_association.main]    
 }
 
+resource "null_resource" "sirmlserver" {
+
+  triggers = {
+    shell_hash = "${sha256(file("./sirmlcmd.sh"))}"
+  }
+
+  provisioner "local-exec" {
+    command = "chmod +x ./sirmlcmd.sh"
+  }
+
+  provisioner "local-exec" {
+    command = "az login --service-principal --username ${var.azure_client_id} --password ${var.azure_client_secret} --tenant ${var.azure_tenant_id}"
+  }
+
+  provisioner "local-exec" {
+    command = "az account set --subscription='${var.azure_subscription_id}'"
+  }
+
+  provisioner "local-exec" {
+      command = "./sirmlcmd.sh ${azurerm_virtual_machine.main.resource_group_name} ${azurerm_virtual_machine.main.name}"
+        }
+
+  provisioner "local-exec" {
+      command = "az logout"
+        }
+
+        depends_on=[azurerm_virtual_machine.main]
+}
 
