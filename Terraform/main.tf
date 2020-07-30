@@ -1,9 +1,9 @@
 terraform{
  backend "azurerm"{
-   storage_account_name = "tfstorage890"
+   storage_account_name = "csg10032000d2add750"
     container_name = "terraform"
     key = "tfstate"
-    access_key = "A9tArPyU9G8imIxeCFRRfc1pWYFozN3rBYKxi02BvLWIDmRtCxD8SHGsbWHILopu5o6PigTMZ3odtheWvmDuWg=="
+    access_key = "QkPExemcig3sFIkTNd4YhSwidLsC0n00Zpr3FESgnclLVrnp/X3bjKAYvxVaez7vTsB8ZZdiyMdCVFu4ZEssBw=="
   }
 }
 
@@ -170,3 +170,18 @@ module "vm-sirml" {
    azure_client_secret             = var.azure_client_secret
 
 }
+
+module "aks" {
+  source                          = "./modules/aks"
+  azenv				  = var.azenv
+  resource_group_name             = azurerm_resource_group.main.name
+  location                        = azurerm_resource_group.main.location
+  aks_admin_username              = var.aks_admin_username
+  agents_size                     = var.agents_size
+  agents_count                    = var.agents_count
+  kubernetes_version              = var.kubernetes_version
+  azure_client_id                 = var.azure_client_id
+  azure_client_secret             = var.azure_client_secret
+#  log_analytics_workspace_id      = module.log_analytics_workspace.id
+}
+

@@ -12,4 +12,15 @@ resource "azurerm_signalr_service" "main" {
     flag  = "ServiceMode"
     value = "Default"
   }
+
+  features {
+    flag  = "EnableConnectivityLogs"
+    value = "False"
+  }
+
+  features {
+    flag  = "EnableMessagingLogs"
+    value = "False"
+  }
+
 }

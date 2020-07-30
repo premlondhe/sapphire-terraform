@@ -124,3 +124,21 @@ variable "nsg-priority-list" {}
 variable "nsg-description-list" {}
 
 variable "nsg-destination-port-range-list" {}
+
+variable "agents_size" {
+  default     = "Standard_DS2_v2"
+  description = "The default virtual machine size for the Kubernetes agents"
+}
+
+variable "agents_count" {
+  default     = "15"
+  description = "The default virtual machine size for the Kubernetes agents"
+}
+
+variable "aks_admin_username" {
+  default     = "aksuser"
+  description = "The username of the local administrator to be created on the Kubernetes cluster"
+}
+
+variable "kubernetes_version" {}
+

@@ -1,9 +1,9 @@
-azure_subscription_id = "1f91fd91-e09c-46fb-83c7-9ba7269f22a1"
-azure_client_id = "be445792-ee6b-4869-a5bb-fc1e73bbe11f"
-azure_tenant_id = "aba84a1b-63f3-46f3-80cf-5273d2c74cb6"
-azure_client_secret = "_461m.-Hu8l8AFq-2c6n_lz6stknO9qd0_"
+azure_subscription_id = "1c6e0061-18db-4538-95bf-0df9dce9cb1e"
+azure_client_id = "f4c96142-1dc1-4778-ba86-643c06f34c74"
+azure_tenant_id = "4f571f28-ae0f-4890-9c62-c4568ebda2c4"
+azure_client_secret = "JQ.K5kJ~.S~gb9NqR816Iv_e9b_ijQGBRA"
 
-azenv="tf"
+azenv="pvn"
 
 storageaccounts=["sapbloblease", "sapstorage", "sapfunctionstorage"]
 storagetables=["atgalertscodedescription", "confirmeddeliverieslookup", "tankchartlevel"]
@@ -43,3 +43,11 @@ nsg-priority-list=["1010","1020","1030","1040"]
 nsg-description-list=["Allow SSH connection","Allow Http connection","Allow https connection","Allow ml server port"]
 nsg-destination-port-range-list=["22","80","443","12800"]
 admin_username="wyane"
+
+
+#Kubernetes AKS
+agents_size="Standard_B2s"
+agents_count="1"
+aks_admin_username="aksuser"
+kubernetes_version="1.16.10"
+
