@@ -142,3 +142,6 @@ variable "aks_admin_username" {
 
 variable "kubernetes_version" {}
 
+variable "allowed_origins" {
+  description = "WebApp CORS origins"
+}

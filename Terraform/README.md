@@ -1,10 +1,9 @@
 Check all the eventhub/servicebus for topics/queues/subscripts in sapphire stg, and update accordingly in script.
 =======
-Pending bash scirpt without local az credentials
-Pending dependes_on implementation.
-Pending AKS/ACI, WebApp, StreamAnalytics, sirmlserver,  through terraform.
 Pending Output & get secrets
 Pending AddKeyVaultsecret script
+Pending comparing resources with sapphire stg environment
+Pending comparing various SKU, sizes eg. sirml vm size etc.
 
 
 

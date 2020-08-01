@@ -51,3 +51,6 @@ agents_count="1"
 aks_admin_username="aksuser"
 kubernetes_version="1.16.10"
 
+
+# WebApp CORS Origins
+allowed_origins=["https://usermanagement.dataservices-pvn.doverfs.com"]

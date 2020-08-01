@@ -1,6 +1,7 @@
 # sapphire
 
-
+terraform refresh
+terraform output
 # Deleting specifc resource
 terraform destroy -target RESOURCE_TYPE.NAME
 module.signalr.azurerm_signalr_service.main

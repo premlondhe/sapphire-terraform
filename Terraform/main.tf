@@ -193,3 +193,12 @@ module "streamanalytics" {
   eh_primarykey			  = module.eventhub.eh_primarykey
   sb_primarykey			  = module.servicebus.sb_primarykey
 }
+
+module "appservice" {
+   source                          ="./modules/appservice"
+   resource_group_name             = azurerm_resource_group.main.name
+   location                        = azurerm_resource_group.main.location
+   azenv			   = var.azenv 
+   allowed_origins		   = var.allowed_origins
+}
+
