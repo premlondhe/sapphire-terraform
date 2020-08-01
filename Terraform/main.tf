@@ -185,3 +185,11 @@ module "aks" {
 #  log_analytics_workspace_id      = module.log_analytics_workspace.id
 }
 
+module "streamanalytics" {
+  source                          = "./modules/streamanalytics"
+  azenv                           = var.azenv
+  resource_group_name             = azurerm_resource_group.main.name
+  location                        = azurerm_resource_group.main.location
+  eh_primarykey			  = module.eventhub.eh_primarykey
+  sb_primarykey			  = module.servicebus.sb_primarykey
+}
