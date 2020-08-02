@@ -23,7 +23,7 @@ Pending comparing various SKU, sizes eg. sirml vm size etc.
 
 #######################################################################################################################
 # PREREQUISITE:
-1. az command must be installed on machine. \
+1. az command must be installed on machine. 
 2. Use below terraform version, the version is downloaded in the root folder in repository. \
         Terraform v0.12.28
         + provider.azurerm v2.19.0
