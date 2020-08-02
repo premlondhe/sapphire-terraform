@@ -22,17 +22,24 @@ Pending comparing resources with sapphire stg environment
 Pending comparing various SKU, sizes eg. sirml vm size etc.
 
 #######################################################################################################################
-PREREQUISITE:
+# PREREQUISITE:
 1. az command must be installed on machine.
 2. Use below terraform version, the version is downloaded in the root folder in repository.
         Terraform v0.12.28
         + provider.azurerm v2.19.0
         + provider.null v2.1.2
+        
+3. Executing Code:
+        git clone {REPO}
+        cd Terraform
+        terraform init
+        terraform plan
+        terraform apply  (-auto-approve)
 
-KEEP IN MIND:
+# KEEP IN MIND:
 1. Whenever you see changes in any bash scripts in AzCLI folder than make changes in terrform accordingly.
 
-POST RUN:
+# POST RUN:
 1. Make sure you execute script "addKeyVaultSecrets.sh" manually to add the secrets in KeyVault.
 
 
