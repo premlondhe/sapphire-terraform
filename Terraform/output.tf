@@ -1,3 +1,4 @@
+/*
 output "app_id" {
   value = module.appinsights.app_id
 }
@@ -17,4 +18,5 @@ output "eh_primarykey" {
 output "sb_primarykey" {
      value = module.servicebus.sb_primarykey
 }
+*/
 

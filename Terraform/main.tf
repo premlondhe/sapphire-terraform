@@ -202,3 +202,31 @@ module "appservice" {
    allowed_origins		   = var.allowed_origins
 }
 
+resource "null_resource" "getsecrets" {
+
+  triggers = {
+    shell_hash = "${sha256(file("./GetSecrets.sh"))}"
+  }
+
+  provisioner "local-exec" {
+    command = "chmod +x ./GetSecrets.sh"
+  }
+
+  provisioner "local-exec" {
+    command = "az login --service-principal --username ${var.azure_client_id} --password ${var.azure_client_secret} --tenant ${var.azure_tenant_id}"
+  }
+
+  provisioner "local-exec" {
+    command = "az account set --subscription='${var.azure_subscription_id}'"
+  }
+
+  provisioner "local-exec" {
+      command = "./GetSecrets.sh ${azurerm_resource_group.main.name} ${azurerm_resource_group.main.location} ${var.azenv}"
+        }
+
+  provisioner "local-exec" {
+      command = "az logout"
+        }
+
+}
+
