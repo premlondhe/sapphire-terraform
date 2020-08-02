@@ -1,5 +1,5 @@
 # Sapphire
-
+-----------
 # Targeting TF resource
 terraform plan -target="module.aks.azurerm_kubernetes_cluster.main" \
 terraform apply -target="module.aks.azurerm_kubernetes_cluster.main" \
