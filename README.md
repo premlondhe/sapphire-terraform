@@ -16,12 +16,12 @@
 # Terraform Outputs Example:
 https://medium.com/@jmarhee/outputs-with-terrmodule.signalr.azurerm_signalr_service.mainafmodule.signalr.azurerm_signalr_service.maimodule.signalr.azurerm_signalr_service.mainnorm-modules-ec0ce38ea1ad
 
-#######################################################################################################################
+###########################################################################################################
 
 Pending comparing resources with sapphire stg environment \
 Pending comparing various SKU, sizes eg. sirml vm size etc.
 
-#######################################################################################################################
+###########################################################################################################
 # PREREQUISITE:
 1. az command must be installed on machine. 
 2. Use below terraform version, the version is downloaded in the root folder in repository. \
