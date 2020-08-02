@@ -6,7 +6,7 @@ terraform apply -target="module.aks.azurerm_kubernetes_cluster.main"
 terraform destroy -target="module.aks.azurerm_kubernetes_cluster.main"
 
 # Some useful commands
-terraform refresh\n
+terraform refresh
 terraform output
 
 # Deleting specifc resource
