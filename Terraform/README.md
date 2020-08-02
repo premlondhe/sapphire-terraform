@@ -1,6 +1,6 @@
 Check all the eventhub/servicebus for topics/queues/subscripts in sapphire stg, and update accordingly in script.
 =======
-Pending Output & get secrets
+Pending "GetSecrets.sh" script.
 Pending AddKeyVaultsecret script
 Pending comparing resources with sapphire stg environment
 Pending comparing various SKU, sizes eg. sirml vm size etc.
