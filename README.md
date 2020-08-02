@@ -30,7 +30,7 @@ Pending comparing various SKU, sizes eg. sirml vm size etc.
         + provider.null v2.1.2
         
 3. Executing Code: \
-        `git clone {REPO} \
+        `git clone {REPO}` \
         `cd Terraform` \
         `terraform init` \
         `terraform plan` \
