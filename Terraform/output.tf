@@ -1,3 +1,20 @@
+output "all_storage_connection_string" {
+ value = module.storage.connection_string[0]
+}
+  
+output "first_storage_connection_string" {
+ value = module.storage.connection_string[0]
+}
+
+output "storages" {
+  value = module.storage.storage_acc_names
+}
+
+output "storages_1" {
+  value = module.storage.storage_acc_names[1]
+}
+
+
 /*
 output "app_id" {
   value = module.appinsights.app_id
