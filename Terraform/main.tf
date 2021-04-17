@@ -1,11 +1,4 @@
-terraform{
- backend "azurerm"{
-   storage_account_name = "csg10032000d2add750"
-    container_name = "terraform"
-    key = "tfstate"
-    access_key = "QkPExemcig3sFIkTNd4YhSwidLsC0n00Zpr3FESgnclLVrnp/X3bjKAYvxVaez7vTsB8ZZdiyMdCVFu4ZEssBw=="
-  }
-}
+
 
 resource "azurerm_resource_group" "main" {
     name = "${var.azenv}-sap-paas-rg"
