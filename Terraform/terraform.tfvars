@@ -1,7 +1,7 @@
-azure_subscription_id = "1c6e0061-18db-4538-95bf-0df9dce9cb1e"
-azure_client_id = "f4c96142-1dc1-4778-ba86-643c06f34c74"
-azure_tenant_id = "4f571f28-ae0f-4890-9c62-c4568ebda2c4"
-azure_client_secret = "JQ.K5kJ~.S~gb9NqR816Iv_e9b_ijQGBRA"
+azure_subscription_id = ""
+azure_client_id = ""
+azure_tenant_id = ""
+azure_client_secret = ""
 
 azenv="pvn"
 
